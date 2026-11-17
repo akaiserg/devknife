@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>devknife</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="app.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<button type="button" class="skip-link" id="skip-btn">Skip to tool</button>
+<div id="app">
+  <aside id="sidebar" aria-label="Tools">
+    <div class="side-head">
+      <a href="#/" class="brand" title="Home — smart paste"><span class="logo" aria-hidden="true"></span>devknife</a>
+      <button type="button" class="icon-btn" id="theme-btn" title="Theme: auto / light / dark" aria-label="Toggle theme"></button>
+    </div>
+    <div class="side-search">
+      <input id="side-filter" type="search" placeholder="Filter tools…" aria-label="Filter tools" autocomplete="off" spellcheck="false">
+      <kbd class="side-kbd">⌘K</kbd>
+    </div>
+    <nav id="tool-list"></nav>
+    <div class="side-foot">
+      <button type="button" class="link-btn" id="help-btn">Shortcuts <kbd>?</kbd></button>
+      <span id="version" class="muted"></span>
+    </div>
+  </aside>
+  <div id="scrim" hidden></div>
+  <main id="main" tabindex="-1"></main>
+</div>
+
+<div id="palette" class="modal" hidden role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="palette-box">
+    <input id="palette-input" type="text" autocomplete="off" spellcheck="false" aria-label="Search tools and commands" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+    <div id="palette-list" role="listbox" aria-label="Results"></div>
+    <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div>
+  </div>
+</div>
+
+<div id="dialog" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+  <div class="dialog-box">
+    <div class="dialog-head"><h2 id="dialog-title"></h2><button type="button" class="icon-btn" data-close aria-label="Close" title="Close (esc)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div id="dialog-body"></div>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

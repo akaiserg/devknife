@@ -1,0 +1,21 @@
+# Build output (anchored: cmd/devknife is source)
+/bin/
+/dist/
+/build/
+/devknife
+/devknife.exe
+*.test
+*.out
+coverage.*
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local-only files
+.claude/skills/
+.claude/settings.local.json
+CODE-REVIEW.md
+extra.txt
